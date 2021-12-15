@@ -32,7 +32,6 @@ int main() {
         switch (choose) {
             case 1:
                 train = new Train;
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
                 cin >> train;
                 keeper.pushObj(train);
                 keeper.sortByNum();
@@ -122,6 +121,7 @@ int main() {
                     cout<< endl;
                 } else {
                     for (int i = 0; i < keeper.getSize(); i++ ) {
+                        cout << "Объект № " << i << endl;
                         cout << keeper[i] << endl;
                     }
                 }

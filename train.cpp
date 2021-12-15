@@ -8,9 +8,9 @@
 #include "train.hpp"
 
 Train::Train() {
-    nameWay = "Название пункта азначения не найдено";
-    number = "Номер поезда не найден";
-    time = "Время отправления не найдено";
+    nameWay = "Не найдено";
+    number = "Не найден";
+    time = "Не найдено";
     cout << "[Был запущен конструктор Train]" << endl;
     cout << endl;
 }
@@ -65,6 +65,7 @@ string Train::getTime() {
 
 istream& operator>>(istream& stream, Train* obj) {
     string str;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
     cout << "1. Пункт назначения: ";
     getline(cin, str);
     if (!obj->numbersInStr(str)) {
@@ -72,6 +73,7 @@ istream& operator>>(istream& stream, Train* obj) {
         } else {
             cout << "Ошибка! Вы ввели число, попробуйте еще раз" << endl;
         }
+    
     cout << "2. Номер поезда: ";
     getline(cin, str);
     if (obj->charInNumbers(str)) {
@@ -95,19 +97,6 @@ ostream& operator<<(ostream& stream, Train* obj) {
     stream << "3. Время отправления: " << obj->time << endl;
     return stream;
 }
-
-//void Train::setInfoObject() {
-//    string str;
-//    cout << "Введите наименование пункта назначения >>>" << endl;
-//    getline(cin, str);
-//    nameWay = str;
-//    cout << "Введите номер поезда >>>" << endl;
-//    getline(cin, str);
-//    number = str;
-//    cout << "Введите время отправления >>>" << endl;
-//    getline(cin, str);
-//    time = str;
-//}
 
 void Train::editInfoObject(int index) {
     string str;

@@ -101,7 +101,6 @@ void Keeper::sortByNum() {
         cout << endl;
     } else {
         if (head->nextElement == nullptr) {
-            //cout << "Готово!" << endl;
             cout << endl;
         } else {
             Element* ptr;

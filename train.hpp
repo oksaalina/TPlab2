@@ -30,8 +30,6 @@ public:
     string getNameWay();
     string getNumber();
     string getTime();
-    
-    void setInfoObject();
     void editInfoObject(int index);
     friend istream& operator>>(istream& stream, Train* obj);
     friend ostream& operator<<(ostream& stream, Train* obj);
